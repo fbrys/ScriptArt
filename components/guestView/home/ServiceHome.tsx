@@ -3,67 +3,56 @@ import React from "react";
 
 export default function ServiceHome() {
   return (
-    <div className="bg-orange-500 h-auto">
-      <div className="pt-5 space-x-20">
-        <div className="flex items-center justify-center">
-          <div className="text-center max-w-2xl px-4">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-8 font-bold md:leading-[3rem] lg:leading-[3.5rem] xl:leading-[3.9rem] text-white">
-              Layanan Kami
-            </h1>
-            <p className="text-white text-center pt-[2vh]">
-              Kami hadir untuk membantu bisnis dan brand Anda berkembang dengan
-              layanan digital berkualitas tinggi. Dari pembuatan website hingga
-              pengelolaan media sosial, kami siap memberikan solusi terbaik yang
-              disesuaikan dengan kebutuhan Anda.
+    <div className="bg-orange-500 py-10 px-4 md:px-10 lg:px-20">
+      <div className="text-center max-w-2xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+          Layanan Kami
+        </h1>
+        <p className="text-white mt-4 text-lg">
+          Kami hadir untuk membantu bisnis dan brand Anda berkembang dengan
+          layanan digital berkualitas tinggi. Dari pembuatan website hingga
+          pengelolaan media sosial, kami siap memberikan solusi terbaik yang
+          disesuaikan dengan kebutuhan Anda.
+        </p>
+      </div>
+
+      <div className="flex flex-wrap lg:grid-cols-3 lg:grid justify-center gap-8 mt-10">
+        {[
+          {
+            title: "Web Development",
+            description:
+              "Ingin memiliki website yang modern, cepat, dan responsif? Kami siap membangun website yang tidak hanya terlihat menarik tetapi juga SEO-friendly dan mobile-friendly, memastikan bisnis Anda lebih mudah ditemukan dan diakses kapan saja!",
+          },
+          {
+            title: "Mobile Application",
+            description:
+              "Kami hadir untuk membantu bisnis dan brand Anda berkembang dengan layanan digital berkualitas tinggi. Dari pembuatan website hingga pengelolaan media sosial, kami siap memberikan solusi terbaik yang disesuaikan dengan kebutuhan Anda.",
+          },
+          {
+            title: "UI/UX Design",
+            description:
+              "Desain bukan hanya soal estetika, tetapi juga pengalaman pengguna! Kami menciptakan desain UI/UX interaktif dan intuitif yang membuat aplikasi dan website Anda semakin menarik, mudah digunakan, dan meningkatkan kepuasan pelanggan.",
+          },
+        ].map((service, index) => (
+          <div
+            key={index}
+            className="bg-white max-w-sm w-full rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 text-center border border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+          >
+            <Image
+              className="rounded-full mx-auto mb-4"
+              src="/images/image.png"
+              alt={service.title}
+              width={120}
+              height={120}
+            />
+            <h5 className="text-xl font-bold text-gray-900 dark:text-white">
+              {service.title}
+            </h5>
+            <p className="text-gray-700 dark:text-gray-400 mt-2">
+              {service.description}
             </p>
           </div>
-        </div>
-        <div className="flex justify-center lg:px-5 mt-5  max-w-6xl w-full items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
-            {[
-              {
-                title: "Web Development",
-                description:
-                  "Ingin memiliki website yang modern, cepat, dan responsif? Kami siap membangun website yang tidak hanya terlihat menarik tetapi juga SEO-friendly dan mobile-friendly, memastikan bisnis Anda lebih mudah ditemukan dan diakses kapan saja!",
-              },
-              {
-                title: "Mobile Application",
-                description:
-                  "Kami hadir untuk membantu bisnis dan brand Anda berkembang dengan layanan digital berkualitas tinggi. Dari pembuatan website hingga pengelolaan media sosial, kami siap memberikan solusi terbaik yang disesuaikan dengan kebutuhan Anda.",
-              },
-              {
-                title: "UI/UX Design",
-                description:
-                  "Desain bukan hanya soal estetika, tetapi juga pengalaman pengguna! Kami menciptakan desain UI/UX interaktif dan intuitif yang membuat aplikasi dan website Anda semakin menarik, mudah digunakan, dan meningkatkan kepuasan pelanggan.",
-              },
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 "
-              >
-                <a href="#">
-                  <Image
-                    className="rounded-full mx-auto mt-5"
-                    src="/images/image.png"
-                    alt=""
-                    width={150}
-                    height={150}
-                  />
-                </a>
-                <div className="p-5 text-center">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      {service.title}
-                    </h5>
-                  </a>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
