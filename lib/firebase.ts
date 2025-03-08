@@ -16,3 +16,4 @@ export const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getA
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const webCollection = collection(db, "webs");
+export const projectCollection = collection(db, "project");
